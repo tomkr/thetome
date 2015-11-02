@@ -7,4 +7,10 @@ defmodule Thetome.PageController do
     books = Repo.all(Book)
     render(conn, "index.html", books: books)
   end
+
+  def show(conn, _params) do
+    book = Repo.all(Book)
+      |> List.first
+    render(conn, "show.html", book: book)
+  end
 end

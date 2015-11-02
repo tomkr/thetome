@@ -16,8 +16,9 @@ defmodule Thetome.Router do
   scope "/", Thetome do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PageController, :index
     resources "/books", BookController
+    get "/", PageController, :index
+    get "/:author/:title", PageController, :show
   end
 
   # Other scopes may use custom stacks.
