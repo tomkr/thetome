@@ -3,7 +3,7 @@ defmodule Thetome.BookTest do
 
   alias Thetome.Book
 
-  @valid_attrs %{author: "some content", release_date: "2010-04-17", title: "some content"}
+  @valid_attrs %{author: "Tom Kruijsen", release_date: "2010-04-17", title: "Some Title"}
   @invalid_attrs %{}
 
   test "changeset with valid attributes" do
@@ -14,5 +14,17 @@ defmodule Thetome.BookTest do
   test "changeset with invalid attributes" do
     changeset = Book.changeset(%Book{}, @invalid_attrs)
     refute changeset.valid?
+  end
+
+  test "created book has a title slug" do
+    changeset = Book.changeset(%Book{}, @valid_attrs)
+    {_result, book} = Repo.insert(changeset)
+    assert book.slug == "some-title"
+  end
+
+  test "created book has an author slug" do
+    changeset = Book.changeset(%Book{}, @valid_attrs)
+    {_result, book} = Repo.insert(changeset)
+    assert book.author_slug == "tom-kruijsen"
   end
 end
