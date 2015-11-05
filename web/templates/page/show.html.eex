@@ -1,20 +1,19 @@
-<h2>Show book</h2>
+<h2><%= @book.title %></h2>
 
-<ul>
+<div class="row">
+  <div class="col-lg-8">
+    <p>
+      <strong>Author:</strong>
+      <%= @book.author %>
+    </p>
 
-  <li>
-    <strong>Title:</strong>
-    <%= @book.title %>
-  </li>
+    <p>
+      <strong>Release date:</strong>
+      <%= @book.release_date %>
+    </p>
+  </div>
 
-  <li>
-    <strong>Author:</strong>
-    <%= @book.author %>
-  </li>
-
-  <li>
-    <strong>Release date:</strong>
-    <%= @book.release_date %>
-  </li>
-
-</ul>
+  <div class="col-lg-4">
+    <img src="<%= cover_image_url(@book, "L") %>" />
+  </div>
+</div>
