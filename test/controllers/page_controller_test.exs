@@ -5,8 +5,8 @@ defmodule Thetome.PageControllerTest do
   alias Thetome.Repo
 
   setup do
-    %Book{title: "Title", author: "Author", release_date: %Ecto.Date{year: 2010, month: 04, day: 17} }
-      |> Repo.insert
+    Book.changeset(%Book{}, %{title: "Title", author: "Author", release_date: %Ecto.Date{year: 2010, month: 04, day: 17}, isbn: "12345678" })
+    |> Repo.insert!
     :ok
   end
 

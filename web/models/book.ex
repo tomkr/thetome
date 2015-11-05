@@ -13,6 +13,12 @@ defmodule Thetome.Book do
     timestamps
   end
 
+  def find_by_slugs(query, title, author) do
+    from b in query,
+    where: b.slug == ^title and
+           b.author_slug == ^author
+  end
+
   @required_fields ~w(title author release_date isbn)
   @optional_fields ~w(description)
 
