@@ -8,12 +8,13 @@ defmodule Thetome.Book do
     field :author_slug, :string
     field :release_date, Ecto.Date
     field :description, :string
+    field :isbn, :string
 
     timestamps
   end
 
-  @required_fields ~w(title author release_date)
-  @optional_fields ~w()
+  @required_fields ~w(title author release_date isbn)
+  @optional_fields ~w(description)
 
   @doc """
   Creates a changeset based on the `model` and `params`.

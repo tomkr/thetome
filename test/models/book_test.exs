@@ -3,7 +3,7 @@ defmodule Thetome.BookTest do
 
   alias Thetome.Book
 
-  @valid_attrs %{author: "Tom Kruijsen", release_date: "2010-04-17", title: "Some Title"}
+  @valid_attrs %{author: "Tom Kruijsen", release_date: "2010-04-17", title: "Some Title", isbn: "12345678"}
   @invalid_attrs %{}
 
   test "changeset with valid attributes" do
