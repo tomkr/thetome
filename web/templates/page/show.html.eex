@@ -16,6 +16,6 @@
   </div>
 
   <div class="col-lg-5">
-    <img class="book__cover--large" src="http://www.gollancz.co.uk/wp-content/uploads/2015/03/Thorn-673x1024.jpg" />
+    <img class="book__cover--large" src="<%= @book.cover_url %>" />
   </div>
 </div>

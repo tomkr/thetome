@@ -31,6 +31,10 @@ a {
   max-width: 100%;
 }
 
+.book__cover--small {
+  height: 200px;
+}
+
 .jumbotron {
   background-color: lighten($toned-down, 6);
   border-radius: 40px;
