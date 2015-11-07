@@ -1,0 +1,37 @@
+@import "_variables.scss";
+@import "_bootstrap.scss";
+
+html, body {
+  color: $main;
+}
+
+h1 {
+  color: $highlight;
+}
+
+a {
+  color: $highlight;
+  &:hover {
+    color: darken($highlight, 10);
+  }
+}
+
+.books__book {
+  @extend .col-lg-3;
+  @extend .col-sm-4;
+  padding-bottom: 40px;
+  font-weight: bold;
+}
+
+.book__title {
+  font-size: 1.2em;
+}
+
+.book__cover--large {
+  max-width: 100%;
+}
+
+.jumbotron {
+  background-color: lighten($toned-down, 6);
+  border-radius: 40px;
+}

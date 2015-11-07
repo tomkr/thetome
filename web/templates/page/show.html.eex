@@ -1,19 +1,21 @@
-<h2><%= @book.title %></h2>
-
 <div class="row">
-  <div class="col-lg-8">
-    <p>
-      <strong>Author:</strong>
-      <%= @book.author %>
-    </p>
-
+  <div class="col-lg-7">
+    <h2><%= @book.title %></h2>
     <p>
       <strong>Release date:</strong>
       <%= @book.release_date %>
     </p>
+    <p>
+      <strong>Author:</strong>
+      <%= @book.author %>
+    </p>
+    <p>
+      <strong>Serie:</strong>
+      <%= @book.serie %>
+    </p>
   </div>
 
-  <div class="col-lg-4">
-    <img src="<%= cover_image_url(@book, "L") %>" />
+  <div class="col-lg-5">
+    <img class="book__cover--large" src="http://www.gollancz.co.uk/wp-content/uploads/2015/03/Thorn-673x1024.jpg" />
   </div>
 </div>

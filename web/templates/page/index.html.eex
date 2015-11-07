@@ -5,8 +5,8 @@
 
 <div class="row books">
   <%= for book <- @books do %>
-    <div class="col-lg-3">
-      <p><a href="<%= page_path(@conn, :show, book.serie_slug, book.slug) %>"><%= book.title %></a></p>
+    <div class="books__book">
+      <p class="book__title"><a href="<%= page_path(@conn, :show, book.serie_slug, book.slug) %>"><%= book.title %></a></p>
       <p><img src="<%= cover_image_url(book) %>" /></p>
       <p><%= book.author %></p>
       <p><%= book.release_date %></p>
