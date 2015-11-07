@@ -5,7 +5,7 @@ defmodule Thetome.PageControllerTest do
   alias Thetome.Repo
 
   setup do
-    Book.changeset(%Book{}, %{title: "Title", author: "Author", release_date: %Ecto.Date{year: 2010, month: 04, day: 17}, isbn: "12345678" })
+    Book.changeset(%Book{}, %{title: "Title", author: "Author", release_date: %Ecto.Date{year: 2010, month: 04, day: 17}, isbn: "12345678", serie: "Serie" })
     |> Repo.insert!
     :ok
   end
@@ -21,7 +21,7 @@ defmodule Thetome.PageControllerTest do
   end
 
   test "has a book detail page" do
-    conn = get conn(), "/author/title"
+    conn = get conn(), "/serie/title"
     assert html_response(conn, 200) =~ "Title"
   end
 end

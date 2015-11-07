@@ -26,6 +26,11 @@
   </div>
 
   <div class="form-group">
+    <%= label f, :serie, "Serie", class: "control-label" %>
+    <%= text_input f, :serie, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
     <%= label f, :release_date, "Release date", class: "control-label" %>
     <%= date_select f, :release_date, class: "form-control" %>
   </div>

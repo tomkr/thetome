@@ -18,7 +18,7 @@ defmodule Thetome.Router do
 
     resources "/books", BookController
     get "/", PageController, :index
-    get "/:author/:title", PageController, :show
+    get "/:serie/:title", PageController, :show
   end
 
   # Other scopes may use custom stacks.

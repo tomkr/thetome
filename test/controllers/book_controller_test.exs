@@ -2,7 +2,7 @@ defmodule Thetome.BookControllerTest do
   use Thetome.ConnCase
 
   alias Thetome.Book
-  @valid_attrs %{author: "some content", release_date: "2010-04-17", title: "some content", isbn: "12345678"}
+  @valid_attrs %{author: "some content", release_date: "2010-04-17", title: "some content", isbn: "12345678", serie: "some content"}
   @invalid_attrs %{}
 
   setup do

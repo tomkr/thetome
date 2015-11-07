@@ -9,7 +9,7 @@ defmodule Thetome.PageController do
   end
 
   def show(conn, params) do
-    book = Book.find_by_slugs(Book, params["title"], params["author"])
+    book = Book.find_by_slugs(Book, params["title"], params["serie"])
     |> Repo.one!
 
     render(conn, "show.html", book: book)

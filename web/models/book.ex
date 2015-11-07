@@ -5,7 +5,8 @@ defmodule Thetome.Book do
     field :title, :string
     field :slug, :string
     field :author, :string
-    field :author_slug, :string
+    field :serie, :string
+    field :serie_slug, :string
     field :release_date, Ecto.Date
     field :description, :string
     field :isbn, :string
@@ -13,14 +14,19 @@ defmodule Thetome.Book do
     timestamps
   end
 
-  def find_by_slugs(query, title, author) do
+  def find_by_slugs(query, title, serie) do
     from b in query,
     where: b.slug == ^title and
-           b.author_slug == ^author
+           b.serie_slug == ^serie
   end
 
-  @required_fields ~w(title author release_date isbn)
-  @optional_fields ~w(description)
+  def in_serie(query, serie) do
+    from b in query,
+    where: b.serie_slug == ^serie
+  end
+
+  @required_fields ~w(title author release_date serie)
+  @optional_fields ~w(description isbn)
 
   @doc """
   Creates a changeset based on the `model` and `params`.
@@ -32,7 +38,7 @@ defmodule Thetome.Book do
     model
     |> cast(params, @required_fields, @optional_fields)
     |> slugify_field(:title, :slug)
-    |> slugify_field(:author, :author_slug)
+    |> slugify_field(:serie, :serie_slug)
   end
 
   def slugify_field(changeset, field_name, slug_name) do

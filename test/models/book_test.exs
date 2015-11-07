@@ -3,7 +3,7 @@ defmodule Thetome.BookTest do
 
   alias Thetome.Book
 
-  @valid_attrs %{author: "Tom Kruijsen", release_date: "2010-04-17", title: "Some Title", isbn: "12345678"}
+  @valid_attrs %{author: "Tom Kruijsen", release_date: "2010-04-17", title: "Some Title", isbn: "12345678", serie: "Some serie"}
   @invalid_attrs %{}
 
   test "changeset with valid attributes" do
@@ -22,9 +22,15 @@ defmodule Thetome.BookTest do
     assert book.slug == "some-title"
   end
 
-  test "created book has an author slug" do
+  test "created book has a serie slug" do
     changeset = Book.changeset(%Book{}, @valid_attrs)
     {_result, book} = Repo.insert(changeset)
-    assert book.author_slug == "tom-kruijsen"
+    assert book.serie_slug == "some-serie"
+  end
+
+  test "has other books in the serie" do
+    book = Repo.insert!(%Book{title: "Book in serie", serie_slug: "serie"})
+    series_book = Repo.insert!(%Book{title: "Other book in serie", serie_slug: "serie"})
+    assert Enum.count(Repo.all(Book.in_serie(Book, "serie"))) == 2
   end
 end
