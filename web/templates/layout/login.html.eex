@@ -1,0 +1,9 @@
+
+<div id="fb-login-status" class="pull-right">
+  <div id="fb-logging-in" class="is-hidden">
+    <a id="fb-login" href="#">Login</a>
+  </div>
+  <div id="fb-logged-in" class="is-hidden">
+    Hello <span id="fb-login-name">Tom Kruijsen</span>
+  </div>
+</div>

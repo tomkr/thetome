@@ -16,6 +16,10 @@ a {
   }
 }
 
+.is-hidden {
+  display: none;
+}
+
 .books__book {
   @extend .col-lg-3;
   @extend .col-sm-4;

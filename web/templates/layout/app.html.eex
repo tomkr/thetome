@@ -16,6 +16,7 @@
       <div class="header">
         <ul class="nav nav-pills pull-right">
         </ul>
+        <%= render "login.html" %>
         <h1>The Tome</h1>
       </div>
 
