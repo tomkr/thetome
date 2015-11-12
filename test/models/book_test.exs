@@ -29,8 +29,8 @@ defmodule Thetome.BookTest do
   end
 
   test "has other books in the serie" do
-    book = Repo.insert!(%Book{title: "Book in serie", serie_slug: "serie"})
-    series_book = Repo.insert!(%Book{title: "Other book in serie", serie_slug: "serie"})
+    Repo.insert!(%Book{title: "Book in serie", serie_slug: "serie"})
+    Repo.insert!(%Book{title: "Other book in serie", serie_slug: "serie"})
     assert Enum.count(Repo.all(Book.in_serie(Book, "serie"))) == 2
   end
 end
