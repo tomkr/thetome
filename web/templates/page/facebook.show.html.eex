@@ -1,0 +1,4 @@
+<meta property="og:url"           content="http://www.your-domain.com/your-page.html" />
+<meta property="og:type"          content="website" />
+<meta property="og:title"         content="The Tome | <%= @book.title %>" />
+<meta property="og:description"   content="<%= @book.title %>" />

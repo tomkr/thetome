@@ -9,9 +9,19 @@
 
     <title>The Tome | Release dates of upcoming fantasy novels</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+
+    <%= render_existing view_module(@conn), "facebook." <> Phoenix.Controller.view_template(@conn), assigns %>
   </head>
 
   <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5&appId=546946902125383";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
     <div class="container" role="main">
       <div class="header">
         <ul class="nav nav-pills pull-right">

@@ -19,3 +19,6 @@
     <img class="book__cover--large" src="<%= @book.cover_url %>" />
   </div>
 </div>
+<div class="row">
+  <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button"></div>
+</div>
