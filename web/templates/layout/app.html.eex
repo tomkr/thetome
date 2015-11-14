@@ -10,7 +10,7 @@
     <title>The Tome | Release dates of upcoming fantasy novels</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
 
-    <%= render_existing view_module(@conn), "facebook." <> Phoenix.Controller.view_template(@conn), assigns %>
+    <%= render_existing view_module(@conn), "facebook." <> view_template(@conn), assigns %>
   </head>
 
   <body>
@@ -24,8 +24,7 @@
     }(document, 'script', 'facebook-jssdk'));</script>
     <div class="container" role="main">
       <div class="header">
-        <ul class="nav nav-pills pull-right">
-        </ul>
+        <%= back_button(@conn) %>
         <%= render "login.html" %>
         <h1>The Tome</h1>
       </div>
