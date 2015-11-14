@@ -13,6 +13,7 @@
       <strong>Serie:</strong>
       <%= @book.serie %>
     </p>
+    <p><%= @book.description %></p>
   </div>
 
   <div class="col-lg-5">
